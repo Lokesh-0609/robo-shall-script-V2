@@ -29,8 +29,8 @@ echo -e "${hs} Extract App Code ${he}" | tee -a ${Log_file}
 unzip /tmp/${component_name}.zip &>>${Log_file}
 status_check
 
-echo -e "${hs} Install App Dependencies & Build Html Code ${he}" | tee -a ${log_file}
-###npm cache clean --force &>>${Log_file}
+echo -e "${hs} Install App Dependencies & Build Html Code ${he}" | tee -a ${Log_file}
+npm cache clean --force &>>${Log_file}
 npm install &>>${Log_file}
 npm run build &>>${Log_file}
 status_check
