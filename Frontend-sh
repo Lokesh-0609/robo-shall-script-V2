@@ -37,6 +37,7 @@ status_check
 
 echo -e "${hs} Copy Built Code to Nginx ${he}" | tee -a ${Log_file}
 rm -rf /usr/share/nginx/html/* &>>${Log_file}
+mkdir -p /usr/share/nginx/html/ &>>${Log_file}
 cp -r out/* /usr/share/nginx/html/ &>>${Log_file}
 status_check
 
