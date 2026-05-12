@@ -1,5 +1,5 @@
 source common.sh
-component-name=frontend
+component_name=frontend
 
 echo Log file output :${log_file}
 echo -e "${hs}" Install Nginx "${he}" | tee -a ${log_file}
