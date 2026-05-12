@@ -1,7 +1,7 @@
 source common.sh
 component-name=frontend
 
-echo Log file output : ${log_file}
+echo Log file output :${log_file}
 echo -e "${hs}" Install Nginx "${he}" | tee -a ${log_file}
 dnf install -y nginx &>>${log_file}
 status_check
