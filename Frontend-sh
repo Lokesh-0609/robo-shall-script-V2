@@ -23,10 +23,16 @@ echo -e "${hs} Create App Directory ${he}" | tee -a ${Log_file}
 rm -rf /tmp/${component_name} &>>${Log_file}
 mkdir -p /tmp/${component_name} &>>${Log_file}
 status_check
-
 cd /tmp/${component_name} &>>${Log_file}
+
 echo -e "${hs} Extract App Code ${he}" | tee -a ${Log_file}
 unzip /tmp/${component_name}.zip &>>${Log_file}
+status_check
+
+echo -e "${hs} Install App Dependencies & Build Html Code ${he}" | tee -a ${log_file}
+npm cache clean --force &>>${log_file}
+npm install &>>${log_file}
+npm run build &>>${log_file}
 status_check
 
 echo -e "${hs} Copy Built Code to Nginx ${he}" | tee -a ${Log_file}
