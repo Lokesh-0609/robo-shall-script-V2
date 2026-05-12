@@ -30,9 +30,9 @@ unzip /tmp/${component_name}.zip &>>${Log_file}
 status_check
 
 echo -e "${hs} Copy Built Code to Nginx ${he}" | tee -a ${Log_file}
-rm -rf  out/
+rm -rf  out/ &>>${Log_file}
 rm -rf /usr/share/nginx/html/* &>>${Log_file}
-mkdir -p out/
+mkdir -p out/ &>>${Log_file}
 cp -r out/* /usr/share/nginx/html/ &>>${Log_file}
 status_check
 
